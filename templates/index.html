@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body onload="intervalCalls()">
+
+<h2>Data recieved from /appointments</h2>
+<div id="buttonblock1">
+</div>
+
+<h2>Data recieved from /people</h2>
+<div id="buttonblock2">
+</div>
+
+<script>
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function intervalCalls() {
+    while (true){
+        getButton1();
+        getButton2();
+        await sleep(2000)
+    }
+}
+
+function getButton1() {
+    const xhr = new XMLHttpRequest();
+    xhr.onload = () => {
+        if (xhr.status == 200) {
+            data = JSON.parse(xhr.response)
+            console.log(data);
+            document.getElementById("buttonblock1").innerHTML = JSON.stringify(data)
+        } else {
+            console.error('Error!');
+        }
+    };
+    xhr.open('GET', 'http://localhost:8000/api/appointments');
+    xhr.send();
+}
+
+function getButton2() {
+    const xhr = new XMLHttpRequest();
+
+    xhr.onload = () => {
+        if (xhr.status == 200) {
+            data = JSON.parse(xhr.response)
+            console.log(data);
+            document.getElementById("buttonblock2").innerHTML = JSON.stringify(data)
+        } else {
+            console.error('Error!');
+        }
+    };
+    xhr.open('GET', 'http://localhost:8000/api/people');
+    xhr.send();
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+

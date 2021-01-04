@@ -1,0 +1,19 @@
+insert into people values (3,10);
+insert into people values (4,20);
+insert into people values (5,5);
+insert into people values (1,30);
+insert into people values (2,40);
+wait 1
+insert into appointments values (2, '2021-01-03','10:20',3,'John','a');
+insert into appointments values (3, '2006-01-05','10:50',4,'Sam','b');
+wait 1
+update appointments set time = '10:50' where person_id = 5;
+insert into appointments values (6, '2006-01-05','11:00',6,'Josh','a');
+delete from appointments where id = 3;
+wait 1
+update people set age = 10 where person_id = 5;
+wait 1
+delete from appointments where person_id = 4;
+delete from people where person_id = 4;
+insert into appointments values (10, '2021-01-03','10:20',1,'Daniel','b');
+delete from appointments where time = '10:20';
