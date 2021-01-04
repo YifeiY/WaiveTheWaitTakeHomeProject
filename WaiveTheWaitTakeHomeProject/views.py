@@ -38,6 +38,8 @@ def show_database(request):
     4. urls.py
     5. any files under templates
     6. any files added by you
+
+    Email yifei@waivethewait.com if you have problems setting the program up. Good luck!
     '''
 
     thread = Thread(target=database_simulator,args=())
