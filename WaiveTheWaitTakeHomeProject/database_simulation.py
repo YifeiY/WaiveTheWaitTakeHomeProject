@@ -19,7 +19,6 @@ def initialize_database():
     cursor.execute('''create table people (person_id, age)''')
     cursor.execute('''insert into appointments VALUES (1, '2021-01-03','10:00',5,'Bob','a')''')
     cursor.execute('''insert into people VALUES (2,20)''')
-    cursor.execute('''select * from people ''')
     connection.commit()
     return connection
 
