@@ -30,17 +30,8 @@ def start_database_simulation(connection, transaction_filename = 'WaiveTheWaitTa
     cursor = connection.cursor()
     transactions = open(transaction_filename).readlines()
     for row in transactions:
-        print(row)
-        if row[:4] == 'wait':
-            time.sleep(int(row.split()[1]))
-        else:
-            cursor.execute(str(row))
-
-    cursor.execute('''select * from appointments''')
-    print('appointments final db',cursor.fetchall())
-
-    cursor.execute('''select * from people''')
-    print('people final db',cursor.fetchall())
+        if row[:4] == 'wait': time.sleep(int(row.split()[1]))
+        else: cursor.execute(str(row))
 
     connection.commit()
 
