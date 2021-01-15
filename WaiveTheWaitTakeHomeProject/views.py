@@ -10,7 +10,7 @@ def show_database(request):
     '''
     Please read the entire description and finish the tasks
     Please make a virtual environment for this project, package requirements are in requirements.txt
-    Run python3 manage.py runserver 8080 in /WaiveTheWaitTakeHomeProject to run the server on port 8080 after activating the virtual environment
+    Run python3 manage.py runserver 8000 in /WaiveTheWaitTakeHomeProject to run the server on port 8000 after activating the virtual environment
 
     Task:
     1. Make a simple web response function
@@ -22,8 +22,8 @@ def show_database(request):
     and BONUS b) the responsiveness of the updates, i.e. how long will it take for changes to the database to be reflected on the webpage
     For b), dont hesitate to modify database_simulation.py, and/or the frontend (index.html, or any other scripts you decide to make)
 
-    2. Make either a bash/cmd script or an executable to start the django program, and open up http://localhost:8080 when opened.
-    2.2 For starting a Django server on port 8080, please use python3 manage.py runserver 8080
+    2. Make either a bash/cmd script or an executable to start the django program, and open up http://localhost:8000 when opened.
+    2.2 For starting a Django server on port 8000, please use python3 manage.py runserver 8000
     2.3 The DEBUG field in the settings file should remain True, you are not required to make a production ready service
     2.4 This one will be evaluated on Windows 10 OS, or MacOS/Linux 18.04, depending on the type of the script you made.
 
